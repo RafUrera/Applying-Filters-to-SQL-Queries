@@ -1,6 +1,6 @@
 # Applying-Filters-to-SQL-Queries
 
-## Project description
+## Project Description
 After the detection of a potential security incident, where repeated login attempts were made after company hours. The organization’s security team was tasked with performing an analysis on the matter. This document shows the process used for using SQL queries and filtering to help investigate the issue, and then performing further security-related tasks.
 
 ## Retrieve After-hours Failed Login Attempts
@@ -10,13 +10,13 @@ After the detection of a potential security incident, where repeated login attem
 The first part of the investigation is to look for all the failed login attempts after company hours. 
 To make the search specific. In the `WHERE` clause,  `login_time > ‘18:00’`, is used to display results for login attempts after 6pm. The next part of the line: `AND success = 0`, makes results only display failed login attempts. 
 
-## Retrieve login attempts on specific dates
+## Retrieve Login Attempts on Specific Dates
 
 ![2](https://github.com/RafUrera/Applying-Filters-to-SQL-Queries/assets/161657613/f5f33af2-af05-4a36-b051-e60537e5a91b)
 
 There were suspicious logins on the date of 2022-05-09, so a closer look is needed on that day and the day before.  To narrow down the logins for specific dates. The `WHERE` clause in this query would use the `=` and `OR` operation to only bring back results of only the two relevant dates for this part of the investigation. The filters used were `login_date = ‘2022-05-09’` and `login_date = ‘2022-05-08’`, which both only show results from the respective dates that are taken from the `log_in_attempts` table.
 
-## Retrieve login attempts outside of Mexico
+## Retrieve Login Attempts Outside of Mexico
 
 ![3](https://github.com/RafUrera/Applying-Filters-to-SQL-Queries/assets/161657613/d7bce437-146a-440a-93d8-6fe2cc92d3fd)
 
@@ -34,7 +34,7 @@ The security team requires security updates to be performed on devices in the Ma
 
 The first filter, `department = ‘Marketing’` reduces the search to a specific department from the column, and `office = LIKE ‘East%’` returns results only from the relevant East office building where the devices are located. 
 
-## Retrieve employees in Finance or Sales
+## Retrieve Employees in Finance or Sales
 
 A separate security task requires a security update for employees in the Finance and Sales departments. So to search for the machines belonging to employees in that department, the following query was used.
 
@@ -42,7 +42,7 @@ A separate security task requires a security update for employees in the Finance
 
 There are two filters in this query that simply bring back results from the finance and sales departments.  The `OR` operator allows the results to have just one of the two conditions be true instead of both at the same time.
 
-## Retrieve all employees not in IT
+## Retrieve All Employees Not in IT
 
 The final task involves a final security update to employee machines. The employees in the Information Technology department have already updated their machines. So this update is to be done for all other employees. 
 
