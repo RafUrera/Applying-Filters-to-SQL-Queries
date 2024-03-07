@@ -1,4 +1,4 @@
-# Applying-Filters-to-SQL-Queries
+# Applying Filters to SQL Queries
 
 ## Project Description
 After the detection of a potential security incident, where repeated login attempts were made after company hours. The organization’s security team was tasked with performing an analysis on the matter. This document shows the process used for using SQL queries and filtering to help investigate the issue, and then performing further security-related tasks.
